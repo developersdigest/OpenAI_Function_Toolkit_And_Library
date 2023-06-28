@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-openai-functions-langchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "langchain": "^0.0.98",
+    "puppeteer": "^19.7.2"
+  },
+  "type": "module"
+}
