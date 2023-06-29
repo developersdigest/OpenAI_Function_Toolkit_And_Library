@@ -1,4 +1,5 @@
 import { exec } from 'child_process';
+
 export const execute = (options) => {
     const { appName } = options;
     return new Promise((resolve, reject) => {
@@ -11,6 +12,7 @@ export const execute = (options) => {
         });
     });
 }
+
 export const details = {
     name: "openApp",
     description: "Opens a specified application on your computer",
