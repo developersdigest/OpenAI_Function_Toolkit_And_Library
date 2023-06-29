@@ -46,7 +46,7 @@ The OpenAI Function Calling Toolkit and Function Library are licensed under the 
 
 ---
 
-Join dev__digest in building amazing AI-powered applications with the OpenAI Function Calling Toolkit and Function Library. Let's explore the capabilities of AI and unleash its potential together!
+Join @developersdigest in building amazing AI-powered applications with the OpenAI Function Calling Toolkit and Function Library. Let's explore the capabilities of AI and unleash its potential together!
 
-Twitter: [@developerdigest](https://twitter.com/developerdigest)
-YouTube Channel: [dev__digest](https://www.youtube.com/dev__digest)
+Twitter: [@dev__digest](https://twitter.com/dev__digest)
+YouTube Channel: [@developersdigest](https://www.youtube.com/@developersdigest)
