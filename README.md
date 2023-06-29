@@ -24,17 +24,7 @@ Please refer to the function documentation for detailed information on each func
 
 ## Contributing
 
-dev__digest encourages contributions to expand the library with more useful functions. If you have ideas for new AI functions or improvements to existing ones, please consider contributing. You can contribute by opening issues to report bugs or suggest new features, as well as submitting pull requests to add new functions or enhance the existing ones.
-
-## Usage
-
-To start using the OpenAI Function Calling Toolkit, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Explore the available functions and their documentation.
-3. Import the desired functions into your project.
-4. Utilize the functions in your code by passing the required parameters.
-5. Run your application and experience the power of AI function calling.
+I strongly contributions to expand the library with more useful functions. If you have ideas for new AI functions or improvements to existing ones, please consider contributing. You can contribute by opening issues to report bugs or suggest new features, as well as submitting pull requests to add new functions or enhance the existing ones.
 
 ## Getting Started
 
