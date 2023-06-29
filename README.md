@@ -1,10 +1,10 @@
 # OpenAI Function Calling Toolkit and Function Library
 
-Welcome to the **OpenAI Function Calling Toolkit**, an open-source library developed by dev__digest. This toolkit provides a collection of AI functions for natural language processing tasks, designed to be used with OpenAI's GPT-3.5 Turbo model.
+Welcome to the **OpenAI Function Calling Toolkit**, an open-source library developed by @developersdigest. This toolkit provides a collection of AI functions for natural language processing tasks, designed to be used with OpenAI's GPT-3.5 Turbo model.
 
 ## Video Tutorial
 
-To help you get started with the OpenAI Function Calling Toolkit, dev__digest has created a comprehensive video tutorial on the dev__digest YouTube channel. This tutorial covers the usage and capabilities of the toolkit, providing step-by-step guidance.
+To help you get started with the OpenAI Function Calling Toolkit, I have created a  video tutorial on the @developersdigest YouTube channel. This tutorial covers the usage and capabilities of the toolkit, providing step-by-step guidance.
 
 [Watch the tutorial video](https://youtu.be/OMIuh2Xicg0)
 
