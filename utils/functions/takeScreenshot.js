@@ -2,7 +2,7 @@ import { PuppeteerWebBaseLoader } from "langchain/document_loaders/web/puppeteer
 import fs from "fs";
 import path from "path";
 
-async function execute({ url }) {
+export const execute = async ({ url }) => {
   try {
     const websiteName = new URL(url).hostname;
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
@@ -42,9 +42,7 @@ async function execute({ url }) {
   }
 }
 
-export const takeScreenshot = {
-  execute,
-  details: {
+export const details = {
     name: "takeScreenshot",
     description: "Take a screenshot of a website",
     parameters: {
@@ -57,6 +55,5 @@ export const takeScreenshot = {
       },
       required: ["url"],
     },
-  },
-  example: "Take a screenshot of the amazon homepage",
+    example: "Take a screenshot of the amazon homepage",
 };
