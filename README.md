@@ -4,7 +4,7 @@ Welcome to the **OpenAI Function Calling Toolkit**, an open-source library devel
 
 ## Video Tutorial
 
-To help you get started with the OpenAI Function Calling Toolkit, I have created a  video tutorial on the @developersdigest YouTube channel. This tutorial covers the usage and capabilities of the toolkit, providing step-by-step guidance.
+To help you get started with the OpenAI Function Calling Toolkit, I have created a  video tutorial on the @developersdigest YouTube channel. This tutorial covers the usage and capabilities of the toolkit, since the video was published I have since restructured the project to be more functional
 
 [Watch the tutorial video](https://youtu.be/OMIuh2Xicg0)
 
