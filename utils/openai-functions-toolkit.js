@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 const envPath = path.resolve(__dirname, "../.env");
 dotenv.config({ path: envPath });
 
-// Dynamically import function from ./functions
+// Dynamically import functions from the ./functions directory
 async function getFunctions() {
   const openAIFunctions = {};
 
@@ -27,9 +27,9 @@ async function getFunctions() {
   return openAIFunctions;
 }
 
-
+// Execute AI functions based on the provided message and functionArray
 export async function ai_functions({ message, functionArray }) {
-  const openAIFunctions = await getFunctions();  // fetch functions dynamically
+  const openAIFunctions = await getFunctions();  // Fetch functions dynamically
 
   // If no specific functions are requested, use all available functions
   if (!functionArray) {
@@ -42,25 +42,23 @@ export async function ai_functions({ message, functionArray }) {
   const functionMap = {};
 
   for (const functionName of functionArray) {
-
     if (openAIFunctions.hasOwnProperty(functionName)) {
       functionMap[functionName] = openAIFunctions[functionName].execute;
     } else {
       throw new Error(`Unsupported function: ${functionName}`);
     }
-}
+  }
 
   // Create a string of function names
   const functionNames = functionArray.join(', ');
 
   console.log(`Using functions: ${functionNames}`);
+
   const baseURL = "https://api.openai.com/v1/chat/completions";
   const headers = {
     "Content-Type": "application/json",
     Authorization: "Bearer " + process.env.OPENAI_API_KEY,
   };
-
-
 
   let data = {
     messages: [
@@ -70,9 +68,7 @@ export async function ai_functions({ message, functionArray }) {
       },
     ],
     model: "gpt-3.5-turbo-0613",
-    functions: functionArray.map(
-      (functionName) => openAIFunctions[functionName].details
-    ),
+    functions: functionArray.map((functionName) => openAIFunctions[functionName].details),
     function_call: "auto",
   };
 
@@ -108,7 +104,6 @@ export async function ai_functions({ message, functionArray }) {
       } else {
         throw new Error(`Unsupported function: ${function_name}`);
       }
-      
 
       executedFunctions[function_name] = true;
 
@@ -126,6 +121,7 @@ export async function ai_functions({ message, functionArray }) {
       });
       response = await response.json();
     }
+
     console.log(response.choices[0].message.content);
 
     return response;
