@@ -1,6 +1,7 @@
 import { PuppeteerWebBaseLoader } from "langchain/document_loaders/web/puppeteer";
 import fs from "fs";
-import path from "path";
+import path from "path"; 
+
 export const execute = async (options) => {
   const { url } = options;
   try {
@@ -34,6 +35,7 @@ export const execute = async (options) => {
     throw error;
   }
 };
+
 export const details = {
     name: "scrapeWebsite",
     description: "Scrape the HTML of a website",
