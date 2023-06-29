@@ -22,24 +22,25 @@ export class ai_functions {
     const openAIFunctions = await this.getFunctions();
 
     if (!functionArray) {
-      // console.log("No specific functions requested. Using all available functions.");
+      console.log(
+        "No specific functions requested. Using all available functions."
+      );
       functionArray = Object.keys(openAIFunctions);
     } else {
-      // console.log(`Requested functions: ${functionArray.join(", ")}`);
+      console.log(`Requested functions: ${functionArray.join(", ")}`);
     }
 
     const functionMap = {};
 
     for (const functionName of functionArray) {
       if (openAIFunctions.hasOwnProperty(functionName)) {
-        functionMap[functionName] = openAIFunctions[functionName].execute;
+        functionMap[functionName] = openAIFunctions[functionName];
       } else {
         throw new Error(`Unsupported function: ${functionName}`);
       }
     }
 
     const functionNames = functionArray.join(", ");
-    // console.log(`Using functions: ${functionNames}`);
 
     const baseURL = "https://api.openai.com/v1/chat/completions";
     const headers = {
@@ -55,12 +56,13 @@ export class ai_functions {
         },
       ],
       model: "gpt-3.5-turbo-0613",
-      functions: functionArray.map((functionName) => openAIFunctions[functionName].details),
+      functions: functionArray.map(
+        (functionName) => openAIFunctions[functionName].details
+      ),
       function_call: "auto",
     };
-
     try {
-      // console.log(`Sending initial request of "${message}" to OpenAI API...`);
+      console.log(`Sending initial request of "${message}" to OpenAI...`);
       let response = await fetch(baseURL, {
         method: "POST",
         headers: headers,
@@ -87,14 +89,14 @@ export class ai_functions {
         if (functionMap.hasOwnProperty(function_name)) {
           const functionArgs = JSON.parse(message.function_call.arguments);
           const functionToExecute = functionMap[function_name];
-          function_response = await functionToExecute(functionArgs);
+
+          function_response = await functionToExecute.execute(functionArgs);
+
         } else {
           throw new Error(`Unsupported function: ${function_name}`);
         }
 
         executedFunctions[function_name] = true;
-
-        // console.log(`Sending function response of ${function_name} to OpenAI...`);
         data.messages.push({
           role: "function",
           name: function_name,
@@ -109,7 +111,6 @@ export class ai_functions {
         response = await response.json();
       }
 
-      // console.log(response.choices[0].message.content);
 
       return response.choices[0].message.content;
     } catch (error) {
@@ -125,8 +126,12 @@ export class ai_functions {
       if (file.endsWith(".js")) {
         const moduleName = file.slice(0, -3);
         const modulePath = `./functions/${moduleName}.js`;
-        const moduleFunction = await import(modulePath);
-        openAIFunctions[moduleName] = moduleFunction[moduleName];
+        const { execute, details } = await import(modulePath);
+
+        openAIFunctions[moduleName] = {
+          execute,
+          details,
+        };
       }
     }
 
