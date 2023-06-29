@@ -14,7 +14,7 @@ The **OpenAI Function Calling Toolkit** empowers developers to easily integrate 
 
 ## Function Library
 
-The **OpenAI Function Library** is a collection of pre-defined AI functions that are included in the toolkit. These functions are ready to use and provide specific functionalities to simplify your development process. Some of the available functions are:
+The **OpenAI Function Library** is a collection of pre-defined AI functions that are included in the toolkit. These functions are ready to use and provide specific functionalities to simplify your development process. Some of the initial available functions are with many more to come over the coming weeks:
 
 - `takeScreenshot`: Capture screenshots of websites.
 - `scrapeHTML`: Extract the HTML content of web pages.
