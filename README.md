@@ -26,10 +26,6 @@ Please refer to the function documentation for detailed information on each func
 
 I strongly contributions to expand the library with more useful functions. If you have ideas for new AI functions or improvements to existing ones, please consider contributing. You can contribute by opening issues to report bugs or suggest new features, as well as submitting pull requests to add new functions or enhance the existing ones.
 
-## Getting Started
-
-For detailed instructions on setting up the toolkit and incorporating the functions into your applications, please refer to the repository's README file.
-
 ## License
 
 The OpenAI Function Calling Toolkit and Function Library are licensed under the MIT License. 
