@@ -42,7 +42,7 @@ For detailed instructions on setting up the toolkit and incorporating the functi
 
 ## License
 
-The OpenAI Function Calling Toolkit and Function Library are licensed under the MIT License. For more information, please refer to the LICENSE file in the repository.
+The OpenAI Function Calling Toolkit and Function Library are licensed under the MIT License. 
 
 ---
 
